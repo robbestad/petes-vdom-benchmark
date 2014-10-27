@@ -25,9 +25,21 @@ The "simple" test cases here use two different component classes (more represent
 "props" test case reuses 1 component class. On my machine I saw a 3x speedup with the "simple" test case. This
 situation is likely repeated at multiple levels throughout your app so the real-world benefits may be bigger.
 
+We can code-golf this benchmark to be faster, but I'm not trying to make a point about raw performance. I'm
+trying to make a point about the depth of understanding of how React works.
+
+Other virtual DOM implementations tout simplicity and modularity and one of the reasons is they throw out
+the idea of component classes (what we call CompositeComponents). In doing so they have unwittingly removed a
+critical optimization for applications at scale -- when you have multiple parts of your page changing in
+unexpected ways, this heuristic is hugely important. Other implementations will probably eventually add this
+heuristic, but this isn't the only hard-won lesson embedded inside of React.
+
 I'm sure that React won't win every benchmark because there are more design considerations in play than pure
-speed. React also hedges against the platform it's running on as well as tries to provide a good (and scalable)
-developer experience, all of which require trading a little speed. But I think these are the right trade-offs.
+speed. React supports multiple rendering backends, old browsers, and tries to have a best-in-class developer
+experience for large teams. All of these features require trading performance, but these are the right
+trade-offs.
+
+We could probably squeeze out a lot more performance though -- want to help? :)
 
 */
 
