@@ -1,0 +1,21 @@
+{
+  "name": "petes-vdom-benchmark",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "NODE_ENV=production webpack -p src/index.js build/bundle.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "webpack": "^1.4.9"
+  },
+  "dependencies": {
+    "react": "^0.11.2",
+    "vdom": "0.0.21",
+    "virtual-dom": "0.0.21",
+    "vtree": "0.0.21"
+  }
+}
